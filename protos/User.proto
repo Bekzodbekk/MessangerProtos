@@ -11,6 +11,7 @@ service UserService{
     rpc GetUsers(GetUsersVoid) returns (GetUsersResp){}
     rpc SignIn(SignInReq) returns (SignInResp){}
     rpc Verify(VerifyReq) returns (VerifyResp){}
+    
 }
 
 message RegisterResp{
