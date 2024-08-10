@@ -3,6 +3,7 @@ syntax = "proto3";
 option go_package = "./genproto/userpb";
 
 service UserService{
+    rpc Register(CreateUserReq) returns (RegisterResp) {}
     rpc CreateUser(CreateUserReq) returns (CreateUserResp){}
     rpc UpdateUser(UpdateUserReq) returns (UpdateUserResp){}
     rpc DeleteUser(DeleteUserReq) returns (DeleteUserResp){}
@@ -10,6 +11,11 @@ service UserService{
     rpc GetUsers(GetUsersVoid) returns (GetUsersResp){}
     rpc SignIn(SignInReq) returns (SignInResp){}
     rpc Verify(VerifyReq) returns (VerifyResp){}
+}
+
+message RegisterResp{
+    string status = 1;
+    string message = 2;
 }
 
 message VerifyReq{
